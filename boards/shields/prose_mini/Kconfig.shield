@@ -1,0 +1,2 @@
+config SHIELD_PROSE_MINI
+    def_bool $(shields_list_contains,prose_mini)

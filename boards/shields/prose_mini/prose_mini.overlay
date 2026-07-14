@@ -1,0 +1,36 @@
+#include "prose_mini.dtsi"
+
+/ {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+                diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios
+            = <&pico_header 8 GPIO_ACTIVE_HIGH>
+            , <&pico_header 9 GPIO_ACTIVE_HIGH>
+            , <&pico_header 10 GPIO_ACTIVE_HIGH>
+            , <&pico_header 11 GPIO_ACTIVE_HIGH>
+            , <&pico_header 12 GPIO_ACTIVE_HIGH>
+            , <&pico_header 13 GPIO_ACTIVE_HIGH>
+            , <&pico_header 14 GPIO_ACTIVE_HIGH>
+            , <&pico_header 15 GPIO_ACTIVE_HIGH>
+            , <&pico_header 16 GPIO_ACTIVE_HIGH>
+            , <&pico_header 17 GPIO_ACTIVE_HIGH>
+            , <&pico_header 18 GPIO_ACTIVE_HIGH>
+            , <&pico_header 19 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&pico_header 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pico_header 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pico_header 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pico_header 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+};
+
+&physical_layout_prose_mini {
+    kscan = <&kscan0>;
+};
+
