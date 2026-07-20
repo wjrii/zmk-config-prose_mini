@@ -1,6 +1,6 @@
 #include "prose_mini-layouts.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/hid_indicators.h>
+#include "hid_indicators.h"
 
 / {
     matrix_transform0: matrix_transform0 {
