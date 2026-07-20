@@ -58,3 +58,39 @@
         };
     };
 };
+
+/ {
+    leds {
+        compatible = "gpio-leds";
+
+        // LEDs as defined in the previous step
+        num_lock_led: num_lock_led { ... };
+        caps_lock_led: caps_lock_led { ... };
+        scroll_lock_led: scroll_lock_led { ... };
+        kana_led: kana_led { ... };
+    };
+
+    indicators {
+        compatible = "zmk,indicator-leds";
+
+        num_lock_indicator: num_lock {
+            indicator = <HID_INDICATOR_NUM_LOCK>;
+            leds = <&num_lock_led>;
+        };
+
+        caps_lock_indicator: caps_lock {
+            indicator = <HID_INDICATOR_CAPS_LOCK>;
+            leds = <&caps_lock_led>;
+        };
+
+        scroll_lock_indicator: scroll_lock {
+            indicator = <HID_INDICATOR_SCROLL_LOCK>;
+            leds = <&scroll_lock_led>;
+        };
+
+        kana_indicator: num_lock {
+            indicator = <HID_INDICATOR_KANA>;
+            leds = <&kana_led>;
+        };
+    };
+};
