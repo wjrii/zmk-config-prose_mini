@@ -47,3 +47,65 @@
         };
     };
 };
+
+/ {
+    leds {
+        compatible = "gpio-leds";
+
+        // LEDs as defined in the previous step
+        num_lock_led: num_lock_led { ... };
+        caps_lock_led: caps_lock_led { ... };
+    };
+
+    indicators {
+        compatible = "zmk,indicator-leds";
+
+        num_lock_indicator: num_lock {
+            indicator = <HID_INDICATOR_NUM_LOCK>;
+            leds = <&num_lock_led>;
+        };
+
+        caps_lock_indicator: caps_lock {
+            indicator = <HID_INDICATOR_CAPS_LOCK>;
+            leds = <&caps_lock_led>;
+        };
+    };
+};
+
+/ {
+    gpios {
+        compatible = "gpio-leds";
+        green: green {
+            gpios = <&pico_header 22 GPIO_ACTIVE_LOW>;
+        };
+        blue: blue {
+        gpios = <&pico_header 26 GPIO_ACTIVE_LOW>;
+        };
+    };
+};
+
+/ {
+    layer_callbacks {
+    compatible = "elpekenin,layer-callback";
+    layer_on {
+        layer = <1>;
+        event = "on-activation";
+        bindings = <&pico_header 22 GPIO_ON>;
+        };
+    layer_off {
+        layer = <1>;
+        event = "on-deactivation";
+        bindings = <&pico_header 22 GPIO_OFF>;
+        };
+    layer_on {
+        layer = <2>;
+        event = "on-activation";
+        bindings = <&pico_header 26 GPIO_ON>;
+        };
+    layer_off {
+        layer = <2>;
+        event = "on-deactivation";
+        bindings = <&pico_header 26 GPIO_OFF>;
+        };
+    };
+};
