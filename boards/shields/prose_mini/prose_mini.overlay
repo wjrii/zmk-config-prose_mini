@@ -34,3 +34,24 @@
     kscan = <&kscan0>;
 };
 
+/ {
+    leds {
+        compatible = "gpio-leds";
+
+        num_lock_led: num_lock_led {
+            gpios = <&pico_header 20 GPIO_ACTIVE_HIGH>;
+        };
+
+        caps_lock_led: caps_lock_led {
+            gpios = <&pico_header 21 GPIO_ACTIVE_HIGH>;
+        };
+        
+        scroll_lock_led: scroll_lock_led {
+            gpios = <&pico_header 22 GPIO_ACTIVE_HIGH>;
+        };
+
+        kana_led: kana_led {
+            gpios = <&pico_header 26 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};
