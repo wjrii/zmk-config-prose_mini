@@ -1,6 +1,5 @@
 #include "prose_mini-layouts.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "elpekenin/behaviors.dtsi"
 
 / {
     matrix_transform0: matrix_transform0 {
