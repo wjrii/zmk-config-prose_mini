@@ -1,4 +1,7 @@
 #include "prose_mini.dtsi"
+#include <dt-bindings/zmk/hid_indicators.h>
+
+
 
 / {
     kscan0: kscan0 {
