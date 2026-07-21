@@ -26,7 +26,7 @@
 
         layer_2 {
             bindings = <
-&kp PIPE    &kp F1  &kp F2  &kp F3           &kp F4          &kp F5           &kp F6   &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &kp HOME      &kp INS
+&studio_unlock    &kp F1  &kp F2  &kp F3           &kp F4          &kp F5           &kp F6   &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &kp HOME      &kp INS
 &trans      &kp F7  &kp F8  &kp F9           &kp F10         &kp F11          &kp F12  &kp LEFT     &kp DOWN  &kp RIGHT      &kp END       &kp RIGHT_BRACKET
 &kp KP_NUM  &trans  &trans  &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &trans   &trans       &trans    &trans         &kp QUESTION
                             &trans           &trans          &kp ENTER        &trans   &trans
